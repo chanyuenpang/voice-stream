@@ -1,0 +1,10 @@
+[Unit]
+Description=Watch for the bound microphone
+
+[Timer]
+OnBootSec=15s
+OnUnitActiveSec=3s
+Unit=voice-mic-watch.service
+
+[Install]
+WantedBy=timers.target

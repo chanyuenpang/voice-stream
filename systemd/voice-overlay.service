@@ -1,0 +1,14 @@
+[Unit]
+Description=voice-overlay: mic indicator in the bottom-right corner
+After=graphical-session.target
+
+[Service]
+Type=simple
+Environment=VOICE_STREAM_HOME=__APP__
+Environment=LD_PRELOAD=/usr/lib/libgtk4-layer-shell.so
+ExecStart=/usr/bin/python3 __REPO__/src/overlay.py
+Restart=always
+RestartSec=2
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,7 @@
+[Unit]
+Description=Start or stop voice-stream with the bound microphone
+
+[Service]
+Type=oneshot
+Environment=VOICE_STREAM_DEVICE_NAME=DJI
+ExecStart=__REPO__/scripts/mic-watch.sh

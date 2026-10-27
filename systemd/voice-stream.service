@@ -1,0 +1,15 @@
+[Unit]
+Description=voice-stream: continuous local dictation
+After=pipewire.service wireplumber.service graphical-session.target
+
+[Service]
+Type=simple
+Environment=VOICE_STREAM_HOME=__APP__
+Environment=VOICE_STREAM_DEVICE_NAME=DJI
+Environment=VOICE_STREAM_WINDOW=dsh-cdp
+Environment=VOICE_STREAM_END_MS=1500
+ExecStart=__APP__/venv/bin/python __REPO__/src/stream.py
+Restart=no
+
+[Install]
+WantedBy=default.target
